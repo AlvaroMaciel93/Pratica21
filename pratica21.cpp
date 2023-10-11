@@ -50,14 +50,15 @@ class Usuario {
         const string& getNome() const {
             return nome;
         }
-        // empresatar livro
+        void emprestarLivro(Livro& livro) {
+            if (livro.getNumCopias() > 0) {
+                livro.emprestar();
+                livrosEmprestados.push_back(&livro);
+                tempoEmprestimo.push_back(time(nullptr));
+            }
+        }
 
-
-
-        // devolver livro
-
-
-
+        // Devolver Livro
 
         // listar livro emprestado
 
