@@ -65,15 +65,25 @@ class Usuario {
 };
 
 int main() {
+
     // Criando livros
-    
+    Livro livro1("As Viagens de Gulliver", "Jonathan Swift", 5);
+    Livro livro2("O Pequeno Príncipe", "Antoine de Saint", 3);
+    Livro livro3("1984", "George Orwell", 2);
 
     // Criando usuários
-
+    Usuario usuario1("Renato Mendes");
+    Usuario usuario2("Maria Clara Diniz");
 
     // Emprestando livros
+    usuario1.emprestarLivro(livro1);
+    usuario2.emprestarLivro(livro1);
+    usuario2.emprestarLivro(livro2);
 
     // Listando livros emprestados por usuários
+    usuario1.listarLivrosEmprestados();
+    usuario2.listarLivrosEmprestados();
+
     
 
     return 0;
