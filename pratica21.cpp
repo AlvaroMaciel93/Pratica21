@@ -50,6 +50,16 @@ class Usuario {
         const string& getNome() const {
             return nome;
         }
+        // empresatar livro
+
+
+
+        // devolver livro
+
+
+
+
+        // listar livro emprestado
 
 };
 
