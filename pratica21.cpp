@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <algorithm>
 
 using namespace std;
 
@@ -58,7 +59,17 @@ class Usuario {
             }
         }
 
-        // Devolver Livro
+        void devolverLivro(Livro& livro){
+            
+            int pos = livrosEmprestados.size();
+            for(int i=0;i<pos;i++){
+                if( livrosEmprestados[i]== &livro ){
+                    livro.devolver();
+                    livrosEmprestados.erase(livrosEmprestados.begin()+i);
+                    tempoEmprestimo.erase(tempoEmprestimo.begin()+i);
+                }
+            }
+        }
 
         // listar livro emprestado
 
@@ -84,6 +95,7 @@ int main() {
     usuario1.listarLivrosEmprestados();
     usuario2.listarLivrosEmprestados();
 
+    usuario1.devolverLivro(livro1);
     
 
     return 0;
